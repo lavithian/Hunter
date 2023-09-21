@@ -42,12 +42,13 @@ body {
 
 .Title {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   background: radial-gradient(circle farthest-side at 95vw 5vh, white 0%, skyblue 37%);
-  /* background-color: skyblue; */
   text-align: center;
+  position: relative;
 }
 
 .profile-pic {
@@ -83,7 +84,7 @@ body {
   width:100%;
   position:absolute;
   bottom:0;
-  /* bottom: -50rem; */
+  /* bottom: 180px; */
   left:0;
   overflow-x: clip;
 }
@@ -100,7 +101,7 @@ body {
 
 .wave:nth-of-type(2) {
   background: url("./images/wave2.svg") repeat-x;
-  top: -198px;
+  top: -197px;
   height: 198px;
   animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
   opacity: 1;
@@ -141,6 +142,8 @@ body {
   display: flex;
   flex-direction: column;
   padding: 2rem 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .experience-picture {
@@ -150,7 +153,6 @@ body {
   height: 100%;
   background-position: top 10% left 47%;
   background-repeat: no-repeat;
-  background-size: 60%;
 }
 
 .hobbies ul{
@@ -162,7 +164,7 @@ body {
 .Contact {
   width: 100vw;
   min-height: 100vh;
-  max-height: 200vh;
+  /* max-height: 200vh; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   color: #fafafa;
@@ -210,6 +212,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .text li p {
@@ -223,6 +226,11 @@ body {
   width: 90%;
   margin-bottom: 2rem;
   padding: 0.5rem;
+  padding-right: 1rem;
+}
+
+.skills h2 {
+  margin-left: 1.3rem;
 }
 
 .skills li {
@@ -263,26 +271,39 @@ body {
 
 .hobbies {
   width: 90%;
-  margin-right: 3rem;
-  margin-bottom: 2rem;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   color: black;
   border-radius: 30px;
   padding: 0.5rem;
   margin: auto;
+  flex-grow: 3;
+}
+
+.hobbies h2 {
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
 }
 
 .hobbies p {
   margin-left: 2rem;
+  margin-right: 1rem;
   margin-bottom: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .links {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 50%;
-  margin: auto;
+  align-items: center;
+  width: 70%;
+  margin: 1.5rem auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 0 50px 5px white;
 }
 
 .links i.fa-brands,
@@ -294,6 +315,25 @@ body {
   text-decoration: none;
   color: inherit;
 }
+
+.fa-github:hover {
+  border-radius: 50%;
+  color: #4078c0;
+  background-color: #002147;
+}
+
+.fa-linkedin-in:hover {
+  border-radius: 20%;
+  color: #0077b5;
+  background-color: #002147;
+}
+
+.fa-envelope:hover {
+  color: #54daff;
+  background-color: #002147;
+  border-radius: 10px;
+}
+
 /* timeline */
 
 /* The actual timeline (the vertical ruler) */
@@ -313,6 +353,7 @@ body {
   bottom: 0;
   left: 50%;
   margin-left: -3px;
+  /* margin: auto; */
 }
 
 /* Container around content */
@@ -475,12 +516,120 @@ body {
     grid-template-rows: 1fr 1fr;
   }
 
-  .side-image {
+  /* .side-image {
     background-size: 206%;
-  }
+  } */
 
   .links {
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+}
+
+/* profile */
+
+@media screen and (max-width: 280px) {
+  .profile-pic {
+    background-size: 100%;
+  }
+}
+
+@media screen and (min-width: 280px) and (max-width: 400px) {
+  .profile-pic {
+    background-size: 100%;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 675px) {
+  .profile-pic {
+    background-size: 75%;
+  }
+}
+
+@media screen and (min-width: 675px) and (max-width: 925px) {
+  .profile-pic {
+    background-size: 55%;
+  }
+}
+
+/* side image */
+
+@media screen and (min-width: 420px) and (max-width: 925px) {
+  .side-image {
+    background-size: 206%;
+  }
+}
+
+@media screen and (min-width: 280px) and (max-width: 420px) {
+  .side-image {
+    background-size: 300%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .side-image {
+    background-size: 400%;
+  }
+}
+
+/* @media screen and (min-width: 600px) and (max-width: 600px) {
+  .experience-picture {
+    background-size: 90%;
+  }
+} */
+
+@media screen and (max-width: 280px) {
+  .experience-picture {
+    background-size: 120%;
+    background-position-y: 12rem;
+  }
+}
+
+@media screen and (min-width: 280px) and (max-width: 430px) {
+  .experience-picture {
+    background-size: 120%;
+    background-position-y: 12rem;
+  }
+}
+
+@media screen and (min-width: 430px) and (max-width: 600px) {
+  .experience-picture {
+    background-size: 120%;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 670px) {
+  .experience-picture {
+    background-size: 90%;
+  }
+}
+
+@media screen and (min-width: 670px) and (max-width: 925px) {
+  .experience-picture {
+    background-size: 85%;
+  }
+}
+
+@media screen and (min-width: 925px) and (max-width: 1050px) {
+  .experience-picture {
+    background-size: 128%;
+  }
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1375px) {
+  .experience-picture {
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1370px) {
+  .experience-picture {
+    background-size: 80%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .side-image {
+    background-size: 300%;
   }
 }
